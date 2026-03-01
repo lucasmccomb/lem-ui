@@ -1,0 +1,58 @@
+/* lem-ui design tokens — shared across lem.fyi, lem.work, lem.photo */
+
+:root {
+  /* Color tokens */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --code-bg: #f6f8fa;
+  --error: #dc2626;
+  --success: #16a34a;
+
+  /* Nav dimensions */
+  --nav-width-collapsed: 64px;
+  --nav-width-expanded: 256px;
+
+  /* Shimmer rainbow */
+  --shimmer-1: #818cf8;
+  --shimmer-2: #c084fc;
+  --shimmer-3: #f472b6;
+  --shimmer-4: #fb923c;
+  --shimmer-5: #4ade80;
+  --shimmer-6: #60a5fa;
+}
+
+.dark {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1f1f1f;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --border: #2e2e2e;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --code-bg: #0d1117;
+  --error: #f87171;
+  --success: #4ade80;
+
+  --shimmer-1: #818cf8;
+  --shimmer-2: #c084fc;
+  --shimmer-3: #f472b6;
+  --shimmer-4: #fb923c;
+  --shimmer-5: #4ade80;
+  --shimmer-6: #60a5fa;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -5rem center, 0 0; }
+  25% { background-position: calc(100% + 5rem) center, 0 0; }
+  100% { background-position: calc(100% + 5rem) center, 0 0; }
+}
