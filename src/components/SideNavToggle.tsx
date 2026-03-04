@@ -17,24 +17,25 @@ export function SideNavToggle({
   id,
 }: SideNavToggleProps) {
   const ctx = useSideNavContext();
-  const isExpanded = isExpandedProp ?? ctx?.isExpanded ?? false;
+  const isVisuallyExpanded = isExpandedProp ?? ctx?.isExpanded ?? false;
+  const isPersistentlyExpanded = ctx?.isPersistentlyExpanded ?? isExpandedProp ?? false;
 
   return (
     <div className="border-t border-neutral-200 p-3 dark:border-neutral-700">
       <button
         id={id}
         onClick={onToggle}
-        className={`flex w-full items-center rounded-lg p-2 text-neutral-600 transition-colors hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 motion-reduce:transition-none dark:text-neutral-400 dark:hover:bg-neutral-800 ${isExpanded ? '' : 'justify-center'}`}
+        className={`flex w-full cursor-pointer items-center rounded-lg p-2 text-neutral-600 transition-colors hover:bg-neutral-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 motion-reduce:transition-none dark:text-neutral-400 dark:hover:bg-neutral-800 ${isVisuallyExpanded ? '' : 'justify-center'}`}
         type="button"
-        aria-label={isExpanded ? 'Collapse navigation' : 'Expand navigation'}
-        aria-expanded={isExpanded}
+        aria-label={isPersistentlyExpanded ? 'Collapse navigation' : 'Expand navigation'}
+        aria-expanded={isPersistentlyExpanded}
       >
-        <span aria-hidden="true">{isExpanded ? collapseIcon : expandIcon}</span>
+        <span aria-hidden="true">{isPersistentlyExpanded ? collapseIcon : expandIcon}</span>
         <span
-          className={`ml-3 text-sm ${isExpanded ? '' : 'hidden'}`}
+          className={`ml-3 text-sm ${isVisuallyExpanded ? '' : 'hidden'}`}
           data-side-nav-label=""
         >
-          {isExpanded ? 'Collapse' : 'Expand'}
+          {isPersistentlyExpanded ? 'Collapse' : 'Expand'}
         </span>
       </button>
     </div>

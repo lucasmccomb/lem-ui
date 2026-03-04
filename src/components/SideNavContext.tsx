@@ -2,6 +2,7 @@ import { createContext, useContext } from 'react';
 
 interface SideNavContextValue {
   isExpanded: boolean;
+  isPersistentlyExpanded: boolean;
 }
 
 const SideNavContext = createContext<SideNavContextValue | null>(null);

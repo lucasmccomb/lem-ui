@@ -48,7 +48,7 @@ export function SideNav({
   };
 
   return (
-    <SideNavProvider value={{ isExpanded: isVisuallyExpanded }}>
+    <SideNavProvider value={{ isExpanded: isVisuallyExpanded, isPersistentlyExpanded: isExpanded }}>
       <aside
         data-side-nav={isVisuallyExpanded ? 'expanded' : 'collapsed'}
         onMouseEnter={handleMouseEnter}
