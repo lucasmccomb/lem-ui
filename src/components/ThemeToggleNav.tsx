@@ -25,7 +25,7 @@ export function ThemeToggleNav({ sunIcon, moonIcon }: ThemeToggleNavProps) {
           {moonIcon}
         </span>
       </div>
-      <span className="side-nav-label" data-side-nav-label="">Theme</span>
+      <span className="hidden" data-side-nav-label="">Theme</span>
     </div>
   );
 }
