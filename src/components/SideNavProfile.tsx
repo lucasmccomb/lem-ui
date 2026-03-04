@@ -1,4 +1,3 @@
-import React from 'react';
 import type { RenderLinkFn } from './types.js';
 
 interface SideNavProfileProps {

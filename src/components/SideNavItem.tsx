@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import type { RenderLinkFn } from './types.js';
 
 interface SideNavItemProps {

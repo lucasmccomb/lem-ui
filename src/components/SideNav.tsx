@@ -1,4 +1,4 @@
-import React, { type ReactNode, useEffect, useRef, useState } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
 
 interface SideNavProps {
   isExpanded: boolean;
@@ -11,7 +11,7 @@ interface SideNavProps {
 
 export function SideNav({
   isExpanded,
-  onExpandedChange,
+  onExpandedChange: _onExpandedChange,
   header,
   children,
   bottom,
