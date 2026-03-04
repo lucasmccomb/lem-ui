@@ -6,7 +6,6 @@ interface SideNavProfileProps {
     isAdmin?: boolean;
     profileHref: string;
     renderLink?: RenderLinkFn;
-    isExpanded?: boolean;
 }
-export declare function SideNavProfile({ initial, name, email, isAdmin, profileHref, renderLink, isExpanded: isExpandedProp, }: SideNavProfileProps): import("react/jsx-runtime").JSX.Element;
+export declare function SideNavProfile({ initial, name, email, isAdmin, profileHref, renderLink, }: SideNavProfileProps): import("react/jsx-runtime").JSX.Element;
 export {};

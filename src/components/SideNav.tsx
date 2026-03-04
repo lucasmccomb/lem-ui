@@ -2,7 +2,7 @@ import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { SideNavProvider } from './SideNavContext.js';
 
 interface SideNavProps {
-  isExpanded: boolean;
+  isExpanded?: boolean;
   onExpandedChange?: (expanded: boolean) => void;
   header: ReactNode;
   children: ReactNode;
@@ -11,7 +11,7 @@ interface SideNavProps {
 }
 
 export function SideNav({
-  isExpanded,
+  isExpanded = false,
   onExpandedChange: _onExpandedChange,
   header,
   children,
@@ -54,7 +54,7 @@ export function SideNav({
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         aria-label="Main navigation"
-        className={`fixed left-0 top-0 z-40 hidden h-full flex-col overflow-hidden border-r border-neutral-200 bg-white transition-all duration-200 ease-out motion-reduce:transition-none nav:flex dark:border-neutral-800 dark:bg-neutral-900 ${isVisuallyExpanded ? 'w-64' : 'w-16'} ${isHoverExpanded && !isExpanded ? 'shadow-xl' : ''} ${className}`}
+        className={`fixed left-0 top-0 z-40 hidden h-full flex-col overflow-hidden border-r border-neutral-200 bg-white transition-all duration-200 ease-out motion-reduce:transition-none nav:flex dark:border-neutral-800 dark:bg-neutral-900 ${isVisuallyExpanded ? 'w-64' : 'w-36'} ${isHoverExpanded && !isExpanded ? 'shadow-xl' : ''} ${className}`}
       >
         <div className="flex shrink-0 items-center justify-center border-b border-neutral-200 p-3 dark:border-neutral-700">
           {header}

@@ -1,5 +1,4 @@
 import type { RenderLinkFn } from './types.js';
-import { useSideNavContext } from './SideNavContext.js';
 
 interface SideNavProfileProps {
   initial: string;
@@ -8,7 +7,6 @@ interface SideNavProfileProps {
   isAdmin?: boolean;
   profileHref: string;
   renderLink?: RenderLinkFn;
-  isExpanded?: boolean;
 }
 
 const defaultRenderLink: RenderLinkFn = (props) => <a {...props} />;
@@ -20,17 +18,13 @@ export function SideNavProfile({
   isAdmin = false,
   profileHref,
   renderLink = defaultRenderLink,
-  isExpanded: isExpandedProp,
 }: SideNavProfileProps) {
-  const ctx = useSideNavContext();
-  const isExpanded = isExpandedProp ?? ctx?.isExpanded ?? false;
-
   return (
     <div className="border-t border-neutral-200 p-3 dark:border-neutral-700">
       {renderLink({
         href: profileHref,
-        className: `flex items-center gap-3 rounded-lg transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800 ${isExpanded ? 'px-1 py-2' : 'justify-center py-1'}`,
-        title: !isExpanded ? name : undefined,
+        className: 'flex items-center gap-3 rounded-lg px-1 py-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800',
+        title: name,
         children: (
           <>
             <div className="relative shrink-0">
@@ -57,7 +51,7 @@ export function SideNavProfile({
               )}
             </div>
             <div
-              className={`min-w-0 flex-1 ${isExpanded ? '' : 'hidden'}`}
+              className="min-w-0 flex-1"
               data-side-nav-label=""
             >
               <p className="truncate text-sm font-medium text-neutral-900 dark:text-neutral-100">

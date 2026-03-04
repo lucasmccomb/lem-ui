@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 interface SideNavProps {
-    isExpanded: boolean;
+    isExpanded?: boolean;
     onExpandedChange?: (expanded: boolean) => void;
     header: ReactNode;
     children: ReactNode;
