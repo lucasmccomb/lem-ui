@@ -46,7 +46,7 @@ export function TOCSidebar({
 
   return (
     <aside
-      className={`hidden w-44 shrink-0 self-start pt-4 lg:block ${className}`}
+      className={`hidden w-44 shrink-0 pt-4 lg:block ${className}`}
       aria-label="Table of contents"
     >
       <div className="sticky top-8">
