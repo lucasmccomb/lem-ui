@@ -1,18 +1,22 @@
 import type { ReactNode } from 'react';
+import { useSideNavContext } from './SideNavContext.js';
 
 interface SideNavSectionProps {
   label?: string;
   divider?: boolean;
-  isExpanded: boolean;
+  isExpanded?: boolean;
   children: ReactNode;
 }
 
 export function SideNavSection({
   label,
   divider = false,
-  isExpanded,
+  isExpanded: isExpandedProp,
   children,
 }: SideNavSectionProps) {
+  const ctx = useSideNavContext();
+  const isExpanded = isExpandedProp ?? ctx?.isExpanded ?? false;
+
   return (
     <>
       {divider && <div className="my-2 border-t border-neutral-200 dark:border-neutral-700" />}

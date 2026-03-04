@@ -8,4 +8,5 @@ export { BottomNav } from './BottomNav.js';
 export { BottomNavItem } from './BottomNavItem.js';
 export { ThemeToggleMobile } from './ThemeToggleMobile.js';
 export { ThemeToggleNav } from './ThemeToggleNav.js';
+export { useSideNavContext } from './SideNavContext.js';
 export type { RenderLinkFn, LinkRenderProps } from './types.js';

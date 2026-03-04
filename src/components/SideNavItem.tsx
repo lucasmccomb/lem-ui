@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react';
 import type { RenderLinkFn } from './types.js';
+import { useSideNavContext } from './SideNavContext.js';
 
 interface SideNavItemProps {
   href?: string;
   onClick?: () => void;
   icon: ReactNode;
   label: string;
-  isExpanded: boolean;
+  isExpanded?: boolean;
   isActive?: boolean;
   badge?: number;
   external?: boolean;
@@ -20,12 +21,15 @@ export function SideNavItem({
   onClick,
   icon,
   label,
-  isExpanded,
+  isExpanded: isExpandedProp,
   isActive = false,
   badge,
   external = false,
   renderLink = defaultRenderLink,
 }: SideNavItemProps) {
+  const ctx = useSideNavContext();
+  const isExpanded = isExpandedProp ?? ctx?.isExpanded ?? false;
+
   const baseClasses = `relative flex items-center gap-3 rounded-lg p-3 text-sm font-medium whitespace-nowrap transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 motion-reduce:transition-none ${
     isActive
       ? 'bg-neutral-100 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100'

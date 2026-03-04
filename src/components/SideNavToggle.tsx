@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
+import { useSideNavContext } from './SideNavContext.js';
 
 interface SideNavToggleProps {
-  isExpanded: boolean;
+  isExpanded?: boolean;
   onToggle?: () => void;
   expandIcon: ReactNode;
   collapseIcon: ReactNode;
@@ -9,12 +10,15 @@ interface SideNavToggleProps {
 }
 
 export function SideNavToggle({
-  isExpanded,
+  isExpanded: isExpandedProp,
   onToggle,
   expandIcon,
   collapseIcon,
   id,
 }: SideNavToggleProps) {
+  const ctx = useSideNavContext();
+  const isExpanded = isExpandedProp ?? ctx?.isExpanded ?? false;
+
   return (
     <div className="border-t border-neutral-200 p-3 dark:border-neutral-700">
       <button

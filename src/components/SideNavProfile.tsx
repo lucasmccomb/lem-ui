@@ -1,4 +1,5 @@
 import type { RenderLinkFn } from './types.js';
+import { useSideNavContext } from './SideNavContext.js';
 
 interface SideNavProfileProps {
   initial: string;
@@ -7,7 +8,7 @@ interface SideNavProfileProps {
   isAdmin?: boolean;
   profileHref: string;
   renderLink?: RenderLinkFn;
-  isExpanded: boolean;
+  isExpanded?: boolean;
 }
 
 const defaultRenderLink: RenderLinkFn = (props) => <a {...props} />;
@@ -19,8 +20,11 @@ export function SideNavProfile({
   isAdmin = false,
   profileHref,
   renderLink = defaultRenderLink,
-  isExpanded,
+  isExpanded: isExpandedProp,
 }: SideNavProfileProps) {
+  const ctx = useSideNavContext();
+  const isExpanded = isExpandedProp ?? ctx?.isExpanded ?? false;
+
   return (
     <div className="border-t border-neutral-200 p-3 dark:border-neutral-700">
       {renderLink({
