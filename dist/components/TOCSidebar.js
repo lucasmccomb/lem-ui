@@ -10,7 +10,7 @@ const ACCENT_ACTIVE = {
 const defaultRenderLink = (props) => _jsx("a", { ...props });
 export function TOCSidebar({ items, activeSection, onNavigate, accentColor = 'blue', backLink, renderLink = defaultRenderLink, className = '', }) {
     const backArrow = (_jsx("svg", { className: "h-3 w-3", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 2, children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19 12H5M12 19l-7-7 7-7" }) }));
-    return (_jsx("aside", { className: `hidden w-44 shrink-0 self-start pt-4 lg:block ${className}`, "aria-label": "Table of contents", children: _jsxs("div", { className: "sticky top-8", children: [backLink &&
+    return (_jsx("aside", { className: `hidden w-44 shrink-0 pt-4 lg:block ${className}`, "aria-label": "Table of contents", children: _jsxs("div", { className: "sticky top-8", children: [backLink &&
                     renderLink({
                         href: backLink.href,
                         className: 'mb-8 inline-flex items-center gap-2 pl-0 text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-neutral-500 dark:hover:text-neutral-300',
