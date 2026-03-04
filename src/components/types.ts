@@ -9,6 +9,7 @@ export interface LinkRenderProps {
   title?: string;
   target?: string;
   rel?: string;
+  onClick?: () => void;
 }
 
 export type RenderLinkFn = (props: LinkRenderProps) => ReactNode;

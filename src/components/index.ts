@@ -1,7 +1,10 @@
 export { Logo } from './Logo.js';
-export { SideNavShell } from './SideNavShell.js';
+export { SideNav } from './SideNav.js';
 export { SideNavItem } from './SideNavItem.js';
-export { BottomNavShell } from './BottomNavShell.js';
+export { SideNavSection } from './SideNavSection.js';
+export { SideNavProfile } from './SideNavProfile.js';
+export { SideNavToggle } from './SideNavToggle.js';
+export { BottomNav } from './BottomNav.js';
 export { BottomNavItem } from './BottomNavItem.js';
 export { ThemeToggleMobile } from './ThemeToggleMobile.js';
 export { ThemeToggleNav } from './ThemeToggleNav.js';
