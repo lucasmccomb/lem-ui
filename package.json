@@ -1,6 +1,8 @@
 {
   "name": "@lem/ui",
   "version": "0.5.1",
+  "license": "MIT",
+  "author": "Lucas McComb",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
